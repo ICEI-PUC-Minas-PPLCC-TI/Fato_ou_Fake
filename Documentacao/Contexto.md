@@ -15,4 +15,4 @@ O objetivo deste Projeto é a criação de um site que servirá como um ajudante
 Cada vez mais, fica-se claro as consequências das Fake news, atualmente é possível observar que as notícias falsas podem servir como fonte de manipulação política, como visto no Brasil principalmente durante a pandemia da Covid-19, estas podem trazer consequências graves para todos.
 
 # Público Alvo
-Apesar de todos sermos possíveis vítimas das fake news, grupos específicos são ainda mais propensos de acreditar e propagar as notícias falsas.Por isso selecionamos o nosso púvlico alvo como pessoas sem muita instrução de como usar a internet, podendo destacar as pessoas de 60 anos ou mais de idade.
+Apesar de todos sermos possíveis vítimas das fake news, grupos específicos são ainda mais propensos de acreditar e propagar as notícias falsas.Por isso selecionamos o nosso público alvo como pessoas sem muita instrução de como usar a internet, podendo destacar as pessoas de 60 anos ou mais de idade.
