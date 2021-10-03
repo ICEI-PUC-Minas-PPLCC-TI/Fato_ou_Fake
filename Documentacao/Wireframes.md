@@ -1,6 +1,6 @@
 # Wireframe 1 
 Homepage
-![wire1](wireframe1.png)
+![wire1](https://raw.githubusercontent.com/ICEI-PUC-Minas-PPLCC-TI/tiaw-ppl-cc-m-20212-trabalho-fake-news-1/master/Documentacao/imagens/wireframe1.png)
 # Wireframe 2
 Página de "Fontes Confiáveis"
 
