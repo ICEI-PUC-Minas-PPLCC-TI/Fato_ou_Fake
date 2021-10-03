@@ -1,11 +1,11 @@
-#Wireframe 1 
+# Wireframe 1 
 Página "Sobre nós" e "Contatos"
-#Wireframe 2
+# Wireframe 2
 Página de "Fontes Confiáveis"
-#Wireframe 3
+# Wireframe 3
 Homepage
-#Wireframe 4 
+# Wireframe 4 
 Página da categoria selecionada pelo usuário
-#Wireframe 5 
+# Wireframe 5 
 Página da notícia que o usuário escolheu
 ![wireframe](imagens/wireframe.pdf)
