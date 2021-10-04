@@ -9,7 +9,7 @@ Em consequência disso, é extremamente necessário que haja diversos canais que
 Como visto na introdução, o problema que buscamos resolver com este projeto é tentar reduzir a disseminação de notícias falsas pela internet.
 
 # Objetivo
-O objetivo deste Projeto é a criação de um site que servirá como um ajudante para a identificação de notícias falsas.Ele poderá ser uma extensão do navegador do usuário e o avisará quando ele se deparar com um notícia falsa. 
+O objetivo deste Projeto é a criação de um site que servirá como um ajudante para a identificação de notícias falsas. Ele poderá ser uma extensão do navegador do usuário e o avisará quando ele se deparar com um notícia falsa. 
 
 # Justificativa 
 Cada vez mais, fica-se claro as consequências das Fake news, atualmente é possível observar que as notícias falsas podem servir como fonte de manipulação política, como visto no Brasil principalmente durante a pandemia da Covid-19, estas podem trazer consequências graves para todos.
