@@ -30,7 +30,7 @@ Para a gestão do código do projeto, a equipe utiliza o método baseado no Git 
 
 > A branch principal é a master, nela, estará contida a versão final para o cliente
 
-Dessa Forma, a organização das branches se dar por:
+Dessa Forma, a organização das branches se dá por:
 
 - **Branch master** - Branch principal que contém o código final 
 - **Branch develop** - Branch responsável pelo ambiente de desenvolvimento do projeto
