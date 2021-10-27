@@ -10,7 +10,7 @@ Com a popularização do acesso aos meios de comunicação, propagar notícias f
 * Andrei Massaini
 * Felipe Burgarelli
 * Henrique Grissi
-* Leon Junior
+* Leon Júnio
 * Vinicius Augusto
 
 ## Professores responsáveis
