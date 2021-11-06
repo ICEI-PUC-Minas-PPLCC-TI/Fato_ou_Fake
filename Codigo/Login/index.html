@@ -5,35 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template Login do Sistema</title>
-
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/0fa763f45b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <form id="frmLogin">
-            <h1>login</h1>
-
-            <!-- div para input de nome de usuário -->
-            <div class="input-area">
-                <input type="text" id="txtUser" name="txtUser" class="form-field" placeholder="Nome de usuário" required/>
-                <label for="txtUser" class="form-label">Nome de usuário</label>
-            </div>
-
-            <!-- div para input de senha -->
-            <div class="input-area">
-                <input type="password" id="txtPassword" name="txtPassword" class="form-field" placeholder="Senha" required/>
-                <label for="txtPassword" class="form-label">Senha</label>
-            </div>
-
-            <!-- <input type="password" id="txtPassword" placeholder="SENHA" required/> -->
-    
-            <button type="submit" id="btnLogin">Entrar <i class="fas fa-arrow-right"></i></button>
-
-            <p>Ainda não tem uma conta? <a href="cadastro.html">Crie uma conta!</a></p>
-        </form>
-    </div>
+    <!-- link para o arquivo js padrão -->
+    <script src="js/main.js"></script>
+    <script>
+        // função inicial do sistema 
+        (function() {
+            // setando adm caso ainda não esteja setado
+            setAdmUser();
+        })();
+    </script>
 </body>
 </html>
