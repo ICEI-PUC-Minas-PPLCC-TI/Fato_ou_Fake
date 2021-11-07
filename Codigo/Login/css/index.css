@@ -68,4 +68,11 @@ body {
     border-bottom: 2px solid #DB503B;
 }
 
+/* media query para resoluções menores */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
 

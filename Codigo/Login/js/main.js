@@ -3,7 +3,7 @@ const TOAST_ERROR = Swal.mixin({
     toast: true,
     position: 'top',
     showConfirmButton: false,
-    timer: 3000,
+    timer: 1500,
     timerProgressBar: true
 });
 
@@ -68,7 +68,7 @@ function setAdmUser() {
             nome: "adm",
             email: "adm@adm", 
             senha: "123adm", 
-            dataNascimento: null,
+            dataNascimento: "0000-00-00",
             tipo: "adm" 
         });
 
@@ -99,7 +99,7 @@ function login(email, pass) {
         } else {
             TOAST_ERROR.fire({
                 icon: 'error',
-                title: 'Usuário ou senha incorretos'
+                title: 'E-mail ou senha incorretos'
             });
         }
     }
@@ -183,6 +183,18 @@ function logout(e) {
     window.location = URLS.login;
 }
 
+// formatar data de nascimento para a impressão na tela
+function formatDate(date){
+    if(!date) return "";
+    
+    let dd = date.substring(8, 10);
+    let mm = date.substring(5, 7);
+    let yy = date.substring(0, 4); 
+    let time = date.substring(11,19);
+    let fdata = `${dd}/${mm}/${yy} ${time}`;
+    return fdata == '// ' ? '' : fdata;
+}
+
 // função para listar o usuário logado 
 function listUsers(table, loggedUser) {
     let users = getDataInLocalStorage(),
@@ -193,7 +205,7 @@ function listUsers(table, loggedUser) {
             rows += 
             `<tr>
                 <td scope="row">${user.nome}</td>
-                <td>${user.dataNascimento}</td>
+                <td>${formatDate(user.dataNascimento)}</td>
                 <td>${user.email}</td>
                 <td>${user.senha}</td>
             </tr>`;
@@ -202,7 +214,7 @@ function listUsers(table, loggedUser) {
         rows = 
         `<tr>
             <td scope="row">${loggedUser.nome}</td>
-            <td>${loggedUser.dataNascimento}</td>
+            <td>${formatDate(loggedUser.dataNascimento)}</td>
             <td>${loggedUser.email}</td>
             <td>${loggedUser.senha}</td>
         </tr>`;
