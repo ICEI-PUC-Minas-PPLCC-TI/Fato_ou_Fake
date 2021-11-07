@@ -1,3 +1,20 @@
+/* estrutura do json de usuários
+
+db_usuarios = [{
+        id: '300cfcad-600a-4d7b-b250-fb635b4ffd2b', // rash de id
+        nome: 'Fulano',
+        email: 'teste@email'
+        senha: 'senha123',
+        dataNascimento: '20/05/2001', // precisa ser maior de 18 anos
+	    tipo: 'adm'||'user'
+    },
+    .
+    .
+    .
+]
+
+*/
+
 //  definição de constantes
 const TOAST_ERROR = Swal.mixin({
     toast: true,
