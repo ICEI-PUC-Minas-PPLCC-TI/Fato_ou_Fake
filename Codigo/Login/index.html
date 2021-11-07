@@ -5,13 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template Login do Sistema</title>
+
+    <!-- estilos globais -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- estilos da página -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/0fa763f45b.js" crossorigin="anonymous"></script>
+
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- verificar se tem usuário logado -->
+    <script>
+        (function() {
+            let loggedUser = JSON.parse(sessionStorage.getItem("usuario_logado")) || undefined;
+
+            if (!loggedUser) {
+                window.location = 'login.html';
+            }
+        })();
+    </script>
 </head>
 <body>
+
+    <section class="wrapper">
+        <header class="wrapper-header">
+            <p class="txt-usuario" id="txtUser"></p>
+            <button type="button" id="btnLogout" class="btn-logout">Sair <i class="fa fa-sign-out"></i></button>
+        </header>
+
+        <main class="wrapper-main container-fluid">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Senha</th>
+                    </tr>
+                </thead>
+                <tbody id="tblUsers">
+                </tbody>
+            </table>
+        </main>
+    </section>
+
     <!-- link para o arquivo js padrão -->
     <script src="js/main.js"></script>
     <script>
         // função inicial do sistema 
         (function() {
+            // verificar se já existe usuário logado
+            let loggedUser = getDataInSessionStorage(),
+                tblUsers = document.querySelector("#tblUsers"),
+                btnLogout = document.querySelector("#btnLogout");
+
+            // listar usuário logado
+            document.querySelector("#txtUser").innerHTML = `Usuário logado: <strong>${loggedUser.nome}</strong>`;
+
+            // listar usuários na tabela
+            listUsers(tblUsers, loggedUser);
+
+            // evento para clique no botão de deslogar
+            btnLogout.addEventListener("click", (e) => { logout(e) })
+
             // setando adm caso ainda não esteja setado
             setAdmUser();
         })();

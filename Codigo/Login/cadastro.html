@@ -21,19 +21,25 @@
 <body>
     <div class="wrapper">
         <!-- conteúdo principal -->
-        <form id="frmRegister">
+        <form id="frmSingUp">
             <h1>Novo Usuário</h1>
 
             <!-- div para input de nome de usuário -->
             <div class="input-area">
-                <input type="text" id="txtUser" name="txtUser" class="form-field" placeholder="Nome de usuário" required/>
-                <label for="txtUser" class="form-label">Nome de Usuário</label>
+                <input type="text" id="txtNome" name="txtNome" class="form-field" placeholder="Nome" required/>
+                <label for="txtNome" class="form-label">Nome</label>
             </div>
 
             <!-- div para input de email de usuário -->
             <div class="input-area">
-                <input type="email" id="txtUser" name="txtUser" class="form-field" placeholder="E-mail" required/>
-                <label for="txtUser" class="form-label">E-mail</label>
+                <input type="email" id="txtEmail" name="txtEmail" class="form-field" placeholder="E-mail" required/>
+                <label for="txtEmail" class="form-label">E-mail</label>
+            </div>
+
+            <!-- div para input de data de nascimento -->
+            <div class="input-area">
+                <input type="date" id="txtDataNascimento" name="txtDataNascimento" class="form-field" placeholder="Data de Nascimento" required/>
+                <label for="txtDataNascimento" class="form-label">Data de Nascimento</label>
             </div>
 
             <!-- div para input de senha -->
@@ -53,5 +59,32 @@
             <p>Já tem uma conta? <a href="login.html">Entrar <i class="fas fa-arrow-right"></i></a></p>
         </form>
     </div>
+
+    <!-- link para o arquivo js padrão -->
+    <script src="js/main.js"></script>
+    <script>
+        // função inicial do sistema 
+        (function() {
+            let frmSingUp = document.querySelector("#frmSingUp");
+
+            frmSingUp.addEventListener("submit", (e) => {
+                // impedit página de recarregar
+                e.preventDefault();
+
+                // obtendo os dados do usuário
+                let name = e.target[0].value,
+                    email = e.target[1].value,
+                    date = e.target[2].value,
+                    pass = e.target[3].value,
+                    confirmPass = e.target[4].value;
+
+                // chamar função de cadastro de usuário
+                singUp(name, email, date, pass, confirmPass);
+            });
+
+            // setando adm caso ainda não esteja setado
+            setAdmUser();
+        })();
+    </script>
 </body>
 </html>

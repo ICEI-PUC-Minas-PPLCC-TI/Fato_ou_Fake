@@ -54,10 +54,17 @@ body {
     color: #0B0B0A;
 }
 
+.wrapper form i {
+    transition: 0.2s;
+}
+
 .wrapper form a:hover, .wrapper form a:hover i{
     color: #DB503B;
 }
 
+.wrapper form a:hover i {
+    transform: translateX(7px);
+}
 
 /* media query para resoluções menores */
 @media screen and (max-width: 468px) {
