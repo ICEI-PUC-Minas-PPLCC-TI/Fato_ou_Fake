@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Login do Sistema</title>
+    <title>Fake Ou Fato</title>
 
-    <!-- estilos globais -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- ===== ícone da aba ===== -->
+    <link rel="shortcut icon" href="../assets/logos/logo-favicon.png" type="image/x-icon">
 
     <!-- estilos da página -->
-    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="../css/pages/cadastro.css">
 
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/0fa763f45b.js" crossorigin="anonymous"></script>
@@ -61,30 +61,7 @@
     </div>
 
     <!-- link para o arquivo js padrão -->
-    <script src="js/main.js"></script>
-    <script>
-        // função inicial do sistema 
-        (function() {
-            let frmSingUp = document.querySelector("#frmSingUp");
-
-            frmSingUp.addEventListener("submit", (e) => {
-                // impedit página de recarregar
-                e.preventDefault();
-
-                // obtendo os dados do usuário
-                let name = e.target[0].value,
-                    email = e.target[1].value,
-                    date = e.target[2].value,
-                    pass = e.target[3].value,
-                    confirmPass = e.target[4].value;
-
-                // chamar função de cadastro de usuário
-                singUp(name, email, date, pass, confirmPass);
-            });
-
-            // setando adm caso ainda não esteja setado
-            setAdmUser();
-        })();
-    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pages/cadastro.js"></script>
 </body>
 </html>

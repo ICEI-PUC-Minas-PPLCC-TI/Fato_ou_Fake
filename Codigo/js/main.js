@@ -25,9 +25,10 @@ const TOAST_ERROR = Swal.mixin({
 });
 
 const URLS = {
-    index: "index.html",
-    login: "login.html",
-    register: "cadastro.html"
+    index: "../index.html",
+    home: "./pages/home.html",
+    login: "./login.html",
+    register: "./cadastro.html"
 };
 
 // função para gerar o id único do usuário 
@@ -51,36 +52,28 @@ function createUsuario(attrs) {
 }
 
 // obtendo usuários do localStorage
-function getDataInLocalStorage() {
-    let users = JSON.parse(localStorage.getItem("db_usuarios")) || [];
+function getDataInLocalStorage(db) {
+    let data = JSON.parse(localStorage.getItem(db)) || [];
 
-    return users;
+    return data;
 }
 
 // setando dados no localStorage 
-function setDataInLocalStorage(user) {
-    let users = getDataInLocalStorage(); 
+function setDataInLocalStorage(db, newData, type) {
+    if (type == 'array') {
+        let data = getDataInLocalStorage(db); 
+    
+        data.push(newData);
 
-    users.push(user);
-
-    localStorage.setItem("db_usuarios", JSON.stringify(users));
-}
-
-// obtendo dados no sessionStorage 
-function getDataInSessionStorage() {
-    let loggedUser = JSON.parse(sessionStorage.getItem("usuario_logado")) || undefined;
-
-    return loggedUser;
-}
-
-// setando dados no sessionStorage
-function setDataInSessionStorage(loggedUser) {
-    sessionStorage.setItem("usuario_logado", JSON.stringify(loggedUser));
+        localStorage.setItem(db, JSON.stringify(data));
+    } else {
+        localStorage.setItem(db, JSON.stringify(newData));
+    }
 }
 
 // setando o adm do sistema
 function setAdmUser() {
-    let users = getDataInLocalStorage(),
+    let users = getDataInLocalStorage('db_usuarios'),
         adm = createUsuario({ 
             nome: "adm",
             email: "adm@adm", 
@@ -93,7 +86,7 @@ function setAdmUser() {
     let checkAdm = users.find(item => item.tipo == "adm");
 
     if (!checkAdm) {
-        setDataInLocalStorage(adm);
+        setDataInLocalStorage('db_usuarios', adm, 'array');
     }
 }
 
@@ -105,12 +98,12 @@ function login(email, pass) {
             title: 'Houve um erro ao efetuar o login! Por favor, tente novamente!'
         })
     } else {
-        let users = getDataInLocalStorage(),
+        let users = getDataInLocalStorage('db_usuarios'),
             checkUser = users.find(item => item.email == email && item.senha == pass);
 
         if (checkUser) {
             // setando usuário logado;
-            setDataInSessionStorage(checkUser);
+            setDataInLocalStorage('usuario_logado', checkUser, 'object');
             
             window.location = URLS.index;
         } else {
@@ -155,7 +148,7 @@ function singUp(name, email, dataNascimento, pass, confirmPass) {
                 title: 'Senhas não coincidem'
             })
         } else {
-            let users = getDataInLocalStorage(),
+            let users = getDataInLocalStorage('db_usuarios'),
                 newUser = createUsuario({
                     nome: name,
                     email, 
@@ -183,7 +176,7 @@ function singUp(name, email, dataNascimento, pass, confirmPass) {
                     title: 'Esse e-mail já está cadastrado!'
                 })
             } else {
-                setDataInLocalStorage(newUser);
+                setDataInLocalStorage('db_usuarios', newUser, 'array');
                 
                 toastSuccess.fire({
                     icon: 'success',
@@ -196,8 +189,8 @@ function singUp(name, email, dataNascimento, pass, confirmPass) {
 
 // função para deslogar do sistema 
 function logout(e) {
-    sessionStorage.removeItem("usuario_logado");
-    window.location = URLS.login;
+    localStorage.removeItem("usuario_logado");
+    window.location = URLS.home;
 }
 
 // formatar data de nascimento para a impressão na tela
