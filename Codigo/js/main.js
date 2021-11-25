@@ -25,10 +25,8 @@ const TOAST_ERROR = Swal.mixin({
 });
 
 const URLS = {
-    index: "../index.html",
-    home: "./pages/home.html",
-    login: "./login.html",
-    register: "./cadastro.html"
+    commonUser: "./pages/common-user/index.html",
+    admUser: "./pages/adm-user/index.html"
 };
 
 // função para gerar o id único do usuário 
@@ -105,7 +103,9 @@ function login(email, pass) {
             // setando usuário logado;
             setDataInLocalStorage('usuario_logado', checkUser, 'object');
             
-            window.location = URLS.index;
+            if (checkUser.tipo == 'adm') window.location.href = URLS.admUser;
+            else window.location.href = URLS.commonUser;
+        
         } else {
             TOAST_ERROR.fire({
                 icon: 'error',
@@ -185,12 +185,6 @@ function singUp(name, email, dataNascimento, pass, confirmPass) {
             }
         }
     }
-}
-
-// função para deslogar do sistema 
-function logout(e) {
-    localStorage.removeItem("usuario_logado");
-    window.location = URLS.home;
 }
 
 // formatar data de nascimento para a impressão na tela

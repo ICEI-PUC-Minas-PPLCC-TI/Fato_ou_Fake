@@ -1,46 +1,59 @@
-// verificar se existe usuário logado antes de carregar a página
-if (!localStorage.getItem("usuario_logado")) window.location.href = './pages/home.html';
+// FUNÇÃO PARA MOSTRAR O MENU
+const menuShow = () => {
+    const nav = $(`#navMenu`);
 
-// função para mostrar o menu
-const showMenu = () => {
-    const nav = $('#navBar'),
-        bodyPd = $('#bodyPd'),
-        headerPd = $('#header');
-  
-    if (nav && bodyPd && headerPd) {
-        nav.toggleClass('show-menu');
-
-        $('#headerToggle').toggleClass('bx-x');
-
-        bodyPd.toggleClass('body-pd');
-
-        headerPd.toggleClass('body-pd');
-    } 
+    if (nav) nav.toggleClass('menu-show');
 }
 
+// FUNÇÃO PARA REMOVER O MENU
+const removeMenu = () => {
+    const nav = $(`#navMenu`);
+
+    if (nav) nav.removeClass('menu-show');
+}
+
+// FUNÇÃO DE SCROLL PARA ATIVAR LINKS 
+const sections = document.querySelectorAll('section[id]')
+
+window.addEventListener('scroll', scrollActive)
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            $(`.nav-link[href*='${sectionId}']`).addClass('active')
+        }else{
+            $(`.nav-link[href*='${sectionId}']`).removeClass('active')
+        }
+    })
+}
+
+// const scrollActive = () => {
+//     const scrollY = window.pageYOffset;
+
+// }
+
+// FUNÇÃO INIT
 onload = () => {
-    const toggle = $('#headerToggle'),
-          link = $('.nav-link'),
-          btnLogout = $('#btnHeaderUser'),
-          userLogado = JSON.parse(localStorage.getItem("usuario_logado"));
+    // declaração das variáveis
+    const toggle = $('#navToggle'), 
+          navLinks = $('.nav-link'),
+          btnEntrar = $('#btnEntrar'); 
 
-    $('#headerUser').text(userLogado.nome);
+    // adicionar listener de click aos elementos 
+    toggle.click(menuShow);
 
-    toggle.click(showMenu);
+    navLinks.click(removeMenu)
 
-    btnLogout.click(function(e) {
-        e.preventDefault();
+    btnEntrar.click(function() {
+        window.location.href = './login.html' 
+    })
 
-        logout();
-    });
-
-    if (link) {
-        link.click(function() {
-            link.each(function(i) {
-                $(this).removeClass('active');
-            });
-
-            $(this).addClass('active');
-        });
-    }
+    // adicionar listener de scroll
+    //sections.scroll(scrollActive)
 }
