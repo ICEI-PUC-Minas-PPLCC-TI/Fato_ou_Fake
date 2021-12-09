@@ -1,5 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=452393&assignment_repo_type=GroupAssignmentRepo)
-# Fake News 1
+# A sua rede social de notícias: Fato ou Fake!
 
 Não é de hoje que as notícias falsas vem sendo um grande problema para a humanidade. Desde os tempos antigos, as mentiras são contadas para fins lúdicos ou para benefícios do emissor, e até mesmo no Brasil, esse mau vem desde a "fundação" do país pelos portuguêses. O poder da mentira está muito além de uma simples brincadeira ou "passar a perna" em alguém. Uma simples mentira, pode te livrar de um simples castigo quando era criança a até mesmo influênciar uma eleição inteira. 
 
