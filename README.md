@@ -15,7 +15,7 @@ Com a popularização do acesso aos meios de comunicação, propagar notícias f
 
 ## Professores responsáveis
 
-* Rosilane
+* Rosilane Ribeiro da Mota
 
 ## Instruções de utilização
 
