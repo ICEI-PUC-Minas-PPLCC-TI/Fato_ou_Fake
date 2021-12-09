@@ -6,7 +6,7 @@ As tecnologias usadas ao longo do nosso Projeto foram:
 * Miro - Criação do mapa de Stakeholders, Matriz de alinhamento CSD e personas.
 * Figma - Foi usado para criar os wireframes e o protótipo interativo.
 ### Desenvolvimento
-* VScode - plataforma para escrever os códigos.
+* VScode 
 * HTML
 * CSS
 * Java Script
