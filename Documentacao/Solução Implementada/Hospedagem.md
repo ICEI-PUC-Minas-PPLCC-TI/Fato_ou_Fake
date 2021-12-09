@@ -1,1 +1,1 @@
-O site ficará hospedado no ambiente do replit no link: 
+A plataforma Replit, irá hospedar o site. Pode acessar o site por essa URL: 
