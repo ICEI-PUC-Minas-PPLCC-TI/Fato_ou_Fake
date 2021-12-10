@@ -10,7 +10,7 @@
 ## Projeto da Solução
 * Requisitos
 * Restrições
-* Projeto de interface,wireframes e protótipo
+* Projeto de interface (wireframes e protótipo)
 * Arquitetura 
 * Tecnologias
 
