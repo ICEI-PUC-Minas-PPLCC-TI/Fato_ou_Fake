@@ -146,7 +146,7 @@ const updateTable = () => {
 const fillFields = (client) => {
     document.getElementById('nome').value = client.nome
     document.getElementById('email').value = client.email
-    document.getElementById('dataNascimento').value = client.nascimento
+    document.getElementById('dataNascimento').value = client.dataNascimento
     document.getElementById('nome').dataset.index = client.index
 }
 
