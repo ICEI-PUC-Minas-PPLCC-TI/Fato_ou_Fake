@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,21 +19,20 @@
     <!-- importação do css de estilos própios da página -->
     <link rel="stylesheet" href="../../css/pages/main.css">
 
-    <link rel="stylesheet" href="../../css/pages/common-user/pesquisa.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../../css/pages/common-user/noticia.css">
+
     <!-- verificação para ver se o usuário é logado -->
     <script>
         let loggedUser = {};
         // verificar se existe usuário logado antes de carregar a página
         if (loggedUser = localStorage.getItem("usuario_logado")) {
             if (JSON.parse(loggedUser).tipo == 'adm') window.location.href = '../adm-user/index.html';
-        } else {
+        } 
+        else {
             window.location.href = '../../index.html';
         }
     </script>
 </head>
-
 <body id="bodyPd">
     <!-- ==== HEADER ==== -->
     <header class="header" id="header">
@@ -57,11 +55,11 @@
                 </a>
 
                 <div class="nav-list">
-                    <a href="./editar-perfil.html" class="nav-link"><i class='bx bx-user nav-icon'></i></a>
+                    <a href="#" class="nav-link"><i class='bx bx-user nav-icon'></i></a>
 
-                    <a href="./index.html" class="nav-link"><i class='bx bx-grid-alt nav-icon' ></i></a>
-
-                    <a href="./pesquisa-noticia.html" class="nav-link active"><i class='bx bx-search nav-icon'></i></a>
+                    <a href="./index.html" class="nav-link active"><i class='bx bx-grid-alt nav-icon' ></i></a>
+                    
+                    <a href="./pesquisa-noticia.html" class="nav-link"><i class='bx bx-search nav-icon'></i></a>
                 </div>
             </div>
         </nav>
@@ -69,37 +67,16 @@
 
     <!-- ==== MAIN ==== -->
     <main class="main">
-        <div class="input-pesquisar">
-            <i class='bx bx-search'></i>
-            <input id="pesquisa" type="text" placeholder="Pesquisar">
-            <i class='bx bx-x'></i>
-        </div>
-        <hr>
-        <div class="tableFixHead">
-            <table id="grid-noticias" class="table table-striped" style="display: table-header-group;">
-                <thead style="width: 100%;">
-                    <tr>
-                        <th>ID</th>
-                        <th>Usuário</th>
-                        <th>Titulo </th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                        <th>Fonte</th>
-                        <th>Data</th>
-                    </tr>
-                </thead>
-                <tbody id="tbl-noticias">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="area-noticia" id="areaNoticia"></div>
+
+        <div class="result-noticia" id="resultNoticia"></div>
+
+        <!-- ==== área botões ==== -->
+        <div class="footer" id="btnFooter">
+            <div class="area-news-validation">
+                <button type="button" class="btn-fato" id="btnFato">Fato</button>
+                <button type="button" class="btn-fake" id="btnFake">Fake</button>
+            </div>
         </div>
     </main>
 
@@ -107,6 +84,7 @@
     <script src="../../js/utils/jquery-3.6.0.min.js"></script>
 
     <script src="../../js/pages/index.js"></script>
-</body>
 
+    <script src="../../js/pages/noticia.js"></script>
+</body>
 </html>
