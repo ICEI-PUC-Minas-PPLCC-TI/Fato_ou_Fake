@@ -16,14 +16,10 @@
     <!-- Sweet alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- css comum entre as páginas de usuários -->
+    <!-- importação do css de estilos própios da página -->
     <link rel="stylesheet" href="../../css/pages/main.css">
 
-    <!-- importação do css de estilos própios da página -->
-    <link rel="stylesheet" href="../../css/pages/common-user/index.css">
-
-    <!-- importação dos estilos para listagem das notícias -->
-    <link rel="stylesheet" href="../../css/pages/common-user/listagemNoticias.css">
+    <link rel="stylesheet" href="../../css/pages/common-user/noticia.css">
 
     <!-- verificação para ver se o usuário é logado -->
     <script>
@@ -70,76 +66,25 @@
     </div>
 
     <!-- ==== MAIN ==== -->
-    <div class="area-categorias" id="areaCategorias">
-        <ul class="list-categorias">
-            <li class="li-categoria">
-                <a href="#" class="link-categoria">
-                    <div>
-                        <i class='bx bx-football'></i>
-                        <span class="categoria-name">Eportes</span>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </div>
-
     <main class="main">
-        <h2 class="title-main">Notícias</h2>
+        <div class="area-noticia" id="areaNoticia"></div>
 
-        <div class="area-noticias" id="areaNoticias"></div>
+        <div class="result-noticia" id="resultNoticia"></div>
+
+        <!-- ==== área botões ==== -->
+        <div class="footer" id="btnFooter">
+            <div class="area-news-validation">
+                <button type="button" class="btn-fato" id="btnFato">Fato</button>
+                <button type="button" class="btn-fake" id="btnFake">Fake</button>
+            </div>
+        </div>
     </main>
 
     <!-- importação do jquery -->
     <script src="../../js/utils/jquery-3.6.0.min.js"></script>
 
-    <!-- scripts do projeto -->
     <script src="../../js/pages/index.js"></script>
 
-    <script>
-        // função para mostrar a notícia
-        const showNoticias = (areaNoticias) => {
-            const noticias = JSON.parse(localStorage.getItem("db_noticias")), 
-                categorias = JSON.parse(localStorage.getItem("db_categorias"));
-
-            // resetando área das notícias
-            areaNoticias.html('');
-
-            for (const noticia of noticias) {
-                let categoria = categorias.find(item => item.id == noticia.idCategoria);
-
-                let html = `
-                    <div class="card" id="card${noticia.id}" data-id="${noticia.id}">
-                        <div class="card-header">
-                            <img src="${noticia.imagem}" alt="Imagem notícia"/>
-                        </div>
-                        <div class="card-body">
-                            <span class="tag tag-${categoria.tagColor}">${categoria.nome}</span>
-                            <h4>${noticia.titulo}</h4>
-                        </div>
-                    </div>
-                `;
-
-                let el = $(html);
-
-                areaNoticias.append(el);
-            }
-        }
-
-        let areaNoticias = $('#areaNoticias');            
-
-        // mostrar notícias
-        showNoticias(areaNoticias); 
-
-        // evento click nos cards 
-        let cards = $('.card');
-
-        if (cards) {
-            cards.click(function () {
-            let idNoticia = $(this).data('id');
-
-            window.location.href = `./pagina-noticia.html?id=${idNoticia}`; 
-            });
-        }
-    </script>
+    <script src="../../js/pages/noticia.js"></script>
 </body>
 </html>
