@@ -33,4 +33,3 @@ As imagens abaixo representam os wireframes das telas do sistema
 - Página da notícia que o usuário escolheu
 
 <img width="818" alt="Notícia" src="https://raw.githubusercontent.com/ICEI-PUC-Minas-PPLCC-TI/tiaw-ppl-cc-m-20212-trabalho-fake-news-1/master/Documentacao/imagens/wireframe4.png"/>
-
