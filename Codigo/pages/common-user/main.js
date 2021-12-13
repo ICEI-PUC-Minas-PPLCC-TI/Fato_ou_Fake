@@ -84,7 +84,7 @@ const createClient = (client) => {
     dbClient.push(client)
     setLocalStorage(dbClient)
 }
-  
+
 const isValidFields = () => {
     return document.getElementById('form').reportValidity()
 }
@@ -116,7 +116,6 @@ const saveClient = () => {
         }
     }
 }
-
 const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
@@ -131,6 +130,9 @@ const createRow = (client, index) => {
     document.querySelector('#tableClient>tbody').appendChild(newRow)
 }
 
+
+
+
 const clearTable = () => {
     const rows = document.querySelectorAll('#tableClient>tbody tr')
     rows.forEach(row => row.parentNode.removeChild(row))
@@ -138,9 +140,12 @@ const clearTable = () => {
 
 const updateTable = () => {
     const dbClient = readClient()
+    const id = JSON.parse(localStorage.getItem('usuario_logado')).id;
+    const novo = dbClient.filter((item) => item.id == id)
+    console.log(novo);
     console.log(dbClient);
     clearTable()
-    dbClient.forEach(createRow)
+    novo.forEach(createRow)
 }
 
 const fillFields = (client) => {
