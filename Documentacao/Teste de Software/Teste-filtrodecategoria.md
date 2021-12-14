@@ -1,5 +1,5 @@
 ### Sprint 03 - Artefato: filtro de categoria
-- Aluno: Henrique Grissi
+* Aluno: Henrique Grissi
 
 - Foi usado o template antigo para fazer o teste, decidimos mudar o template na sprint 04
 
