@@ -8,7 +8,6 @@ Com a popularização do acesso aos meios de comunicação, propagar notícias f
 ## Alunos integrantes da equipe
 
 * Andrei Massaini
-* Felipe Burgarelli
 * Henrique Grissi
 * Leon Júnio
 * Vinicius Augusto
