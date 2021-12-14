@@ -3,7 +3,7 @@ As imagens abaixo representam os wireframes das telas do sistema
 
 ## Wireframe 1 
 - Homepage
-<br>
+
 
 ![image](https://user-images.githubusercontent.com/89463780/145820791-63a5913a-481e-4acb-aefc-9f144a6ec94e.png)
 
@@ -15,9 +15,11 @@ As imagens abaixo representam os wireframes das telas do sistema
 
 ![image](https://user-images.githubusercontent.com/89463780/145820970-7a2ef368-cad9-4e90-8f37-56a735d60a84.png)
 
+
 <br>
 
 ## Wireframe 3
+<
 - Home do usuário
 <br>
 
@@ -27,10 +29,12 @@ As imagens abaixo representam os wireframes das telas do sistema
 <br>
 
 ## Wireframe 4 
+
 - Página da notícia selecionada pelo usuário
 <br>
 
 ![image](https://user-images.githubusercontent.com/89463780/145821334-405674ef-04fa-4edb-a0a2-bbb69a280051.png)
+
 
 <br>
 
