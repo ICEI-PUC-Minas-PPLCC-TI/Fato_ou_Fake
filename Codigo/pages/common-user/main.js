@@ -124,7 +124,6 @@ const createRow = (client, index) => {
         <td>${client.dataNascimento}</td>
         <td>
             <button  type="button" class="button green" id="edit-${index}"><i class="fas fa-edit"></i></button>
-            <button  type="button" class="button red " id="delete-${index}"><i class="fas fa-trash-alt"></i></button>
         </td>
     `
     document.querySelector('#tableClient>tbody').appendChild(newRow)

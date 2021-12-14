@@ -21,14 +21,15 @@ function exibeInformacoes() {
             }
         }
         $("#tbl-noticias").append(`<tr>
-                                <td>${noticia.id}</td>
-                                <td>${user.nome}</td>
-                                <td>${noticia.titulo}</td>
-                                <td>${noticia.descricao}</td>
-                                <td>${categoria.nome}</td>
-                                <td>${noticia.fonteNoticia}</td>
-                                <td>${noticia.dataPublicada}</td>
-                            </tr>`);
+            <td>${noticia.id}</td>
+            <td>${user.nome}</td>
+            <td>${noticia.titulo}</td>
+            <td>${noticia.descricao}</td>
+            <td>${categoria.nome}</td>
+            <td>${noticia.fonteNoticia}</td>
+            <td>${noticia.dataPublicada}</td>
+            <td><button style="padding: 1rem; background: #FFB200; cursor: pointer;" type="button" onclick="window.location.href = './pagina-noticia.html?id=${noticia.id}'">Ver</button></td>
+        </tr>`);
     }
 }
 

@@ -46,6 +46,10 @@ main{
     background-image: linear-gradient(rgba(238, 213, 213, 0.37), rgb(195, 230, 250));
 }
 
+.main {
+    overflow-y: hidden;
+}
+
 
 @media (max-width:480px){
     header{
@@ -61,5 +65,15 @@ main{
         margin: 20px 0 0 0;
         width:100%;
         box-shadow: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        padding-right:  calc(var(--nav-categorias-width) );
+    }
+
+    .main {
+        padding: 1rem 0 0 0 !important;
     }
 }

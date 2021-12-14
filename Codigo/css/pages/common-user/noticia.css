@@ -21,6 +21,9 @@
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
+
+    row-gap: 2rem;
+
     padding: 20px 0;
 }
 
