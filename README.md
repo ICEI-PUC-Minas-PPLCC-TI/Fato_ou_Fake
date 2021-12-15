@@ -18,4 +18,4 @@ Com a popularização do acesso aos meios de comunicação, propagar notícias f
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Para executar esta aplicação, bastar abrir o arquivo index.html em um navegador. O arquivo em questão está presente dentro da pasta referente aos códigos.
