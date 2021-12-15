@@ -117,19 +117,21 @@ const saveClient = () => {
     }
 }
 const createRow = (client, index) => {
+    const db_client = readClient();
+
+    let indice = db_client.findIndex(item => item.id == client.id);
+
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td>${client.nome}</td>
         <td>${client.email}</td>
         <td>${client.dataNascimento}</td>
         <td>
-            <button  type="button" class="button green" id="edit-${index}"><i class="fas fa-edit"></i></button>
+            <button  type="button" class="button green" id="edit-${indice}"><i class="fas fa-edit"></i></button>
         </td>
     `
     document.querySelector('#tableClient>tbody').appendChild(newRow)
 }
-
-
 
 
 const clearTable = () => {
