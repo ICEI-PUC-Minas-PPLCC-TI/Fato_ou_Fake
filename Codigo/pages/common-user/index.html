@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,12 +32,12 @@
         // verificar se existe usuário logado antes de carregar a página
         if (loggedUser = localStorage.getItem("usuario_logado")) {
             if (JSON.parse(loggedUser).tipo == 'adm') window.location.href = '../adm-user/index.html';
-        } 
-        else {
+        } else {
             window.location.href = '../../index.html';
         }
     </script>
 </head>
+
 <body id="bodyPd">
     <!-- ==== HEADER ==== -->
     <header class="header" id="header">
@@ -62,7 +63,9 @@
                     <a href="./editar-perfil.html" class="nav-link"><i class='bx bx-user nav-icon'></i></a>
 
                     <a href="./index.html" class="nav-link active"><i class='bx bx-grid-alt nav-icon' ></i></a>
-                    
+
+                    <a href="./pagina-cadastro.html" class="nav-link"><i class='bx bx-plus nav-icon'></i></a>
+
                     <a href="./pesquisa-noticia.html" class="nav-link"><i class='bx bx-search nav-icon'></i></a>
                 </div>
             </div>
@@ -98,9 +101,11 @@
     <script>
         // função para mostrar a notícia
         const showNoticias = (areaNoticias) => {
+
             const noticias = JSON.parse(localStorage.getItem("db_noticias")), 
                 categorias = JSON.parse(localStorage.getItem("db_categorias")), 
                 usuario_logado = JSON.parse(localStorage.getItem("usuario_logado"));
+
 
             // resetando área das notícias
             areaNoticias.html('');
@@ -128,21 +133,22 @@
             }
         }
 
-        let areaNoticias = $('#areaNoticias');            
+        let areaNoticias = $('#areaNoticias');
 
         // mostrar notícias
-        showNoticias(areaNoticias); 
+        showNoticias(areaNoticias);
 
         // evento click nos cards 
         let cards = $('.card');
 
         if (cards) {
-            cards.click(function () {
-            let idNoticia = $(this).data('id');
+            cards.click(function() {
+                let idNoticia = $(this).data('id');
 
-            window.location.href = `./pagina-noticia.html?id=${idNoticia}`; 
+                window.location.href = `./pagina-noticia.html?id=${idNoticia}`;
             });
         }
     </script>
 </body>
+
 </html>
