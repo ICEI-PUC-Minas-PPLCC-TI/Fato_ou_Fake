@@ -1,3 +1,3 @@
 # Divulgação: Vídeo do Projeto
 
-Vídeo do Projeto: https://www.youtube.com/watch?v=rbJrNUcrxGU
+Vídeo do Projeto: https://youtu.be/-2GzRwAi0ew
