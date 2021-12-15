@@ -1,6 +1,6 @@
 'use strict'
 
-// var db_contatos_inicial = [
+var db_contatos_inicial = [
 //     {
 //     "nome": "Kirstin",
 //     "nascimento": "04/20/2017",
@@ -46,7 +46,7 @@
 //     "nascimento": "05/11/2017",
 //     "email": "bbowkera@google.it"
 //   },
-// ];
+];
 
 var db = JSON.parse(localStorage.getItem('db_usuarios'));
 if (!db) {

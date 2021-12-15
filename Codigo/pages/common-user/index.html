@@ -101,30 +101,35 @@
     <script>
         // função para mostrar a notícia
         const showNoticias = (areaNoticias) => {
-            const noticias = JSON.parse(localStorage.getItem("db_noticias")),
-                categorias = JSON.parse(localStorage.getItem("db_categorias"));
+
+            const noticias = JSON.parse(localStorage.getItem("db_noticias")), 
+                categorias = JSON.parse(localStorage.getItem("db_categorias")), 
+                usuario_logado = JSON.parse(localStorage.getItem("usuario_logado"));
+
 
             // resetando área das notícias
             areaNoticias.html('');
 
             for (const noticia of noticias) {
-                let categoria = categorias.find(item => item.id == noticia.idCategoria);
-
-                let html = `
-                    <div class="card" id="card${noticia.id}" data-id="${noticia.id}">
-                        <div class="card-header">
-                            <img src="${noticia.imagem}" alt="Imagem notícia"/>
+                if (noticia.idUsuario != usuario_logado.id) {
+                    let categoria = categorias.find(item => item.id == noticia.idCategoria);
+    
+                    let html = `
+                        <div class="card" id="card${noticia.id}" data-id="${noticia.id}">
+                            <div class="card-header">
+                                <img src="${noticia.imagem}" alt="Imagem notícia"/>
+                            </div>
+                            <div class="card-body">
+                                <span class="tag tag-${categoria.tagColor}">${categoria.nome}</span>
+                                <h4>${noticia.titulo}</h4>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <span class="tag tag-${categoria.tagColor}">${categoria.nome}</span>
-                            <h4>${noticia.titulo}</h4>
-                        </div>
-                    </div>
-                `;
-
-                let el = $(html);
-
-                areaNoticias.append(el);
+                    `;
+    
+                    let el = $(html);
+    
+                    areaNoticias.append(el);
+                }
             }
         }
 
