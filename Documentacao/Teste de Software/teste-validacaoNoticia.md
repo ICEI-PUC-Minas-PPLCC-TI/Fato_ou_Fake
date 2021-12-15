@@ -8,6 +8,8 @@ Template das telas
 ### tela de validação de notícia
 <img width="512" alt="tela de validação de notícia" src="../imagens/validacao-notiica.png"/>
 
+<br><br>
+
 ## Teste de Softaware
 
 > a seguir, serão listados os testes de software desse artefato
