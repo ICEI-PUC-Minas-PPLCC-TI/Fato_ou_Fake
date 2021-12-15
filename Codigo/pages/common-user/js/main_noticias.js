@@ -8,6 +8,7 @@ const URLS = {
 var db = getCategoriasInLocalStorage();
 var dbn = getNoticiasInLocalStorage();
 var dbu = getUsersInLocalStorage();
+var dbnt = getVersInLocalStorage();
 var user = getUserInLocalStorage();
 
 // função para criar noticias
@@ -41,6 +42,11 @@ function getUserInLocalStorage() {
     return user;
 }
 
+function getVersInLocalStorage() {
+    let ver = JSON.parse(localStorage.getItem("db_verificacoes_noticias"));
+    return ver;
+}
+
 function getUsersInLocalStorage() {
     let usuarios = JSON.parse(localStorage.getItem("db_usuarios"));
     return usuarios;
@@ -59,6 +65,10 @@ function setDataInLocalStorage(noticia) {
     if (dbn.length != 0) {
         idNot = dbn[dbn.length - 1].id + 1;
     }
+    let idNotV = 1;
+    if (dbnt.length != 0) {
+        idNotV = dbnt[dbnt.length - 1].id + 1;
+    }
     let newNot = {
         "id": idNot,
         "idUsuario": user.id,
@@ -70,8 +80,15 @@ function setDataInLocalStorage(noticia) {
         "isFakeNews": noticia.isFakeNews.checked,
         "fonteNoticia": noticia.fonteNoticia,
     };
+    let newVer = {
+        "id":idNotV,
+        "idNoticia":idNot,
+        "verificacoes":[]
+    };
     dbn.push(newNot);
+    dbnt.push(newVer);
     localStorage.setItem('db_noticias', JSON.stringify(dbn));
+    localStorage.setItem('db_verificacoes_noticias', JSON.stringify(dbnt));
 }
 
 function previewFile() {
