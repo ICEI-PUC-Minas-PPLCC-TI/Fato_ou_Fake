@@ -33,6 +33,13 @@
             window.location.href = '../../index.html';
         }
     </script>
+
+    <style>
+        .table tr th,
+        .table tr td {
+            padding: 1rem .5rem !important;
+        }
+    </style>
 </head>
 
 <body id="bodyPd" onload="init()">
@@ -75,7 +82,7 @@
             <i class='bx bx-x'></i>
         </div>
         <hr>
-        <div class="tableFixHead">
+        <div class="tableFixHead" style="height: 500px;">
             <table id="grid-noticias" class="table table-striped" style="display: table-header-group;">
                 <thead style="width: 100%;">
                     <tr>
@@ -86,6 +93,7 @@
                         <th>Categoria</th>
                         <th>Fonte</th>
                         <th>Data</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="tbl-noticias">
@@ -105,7 +113,83 @@
 
     <!-- importação do jquery -->
     <script src="../../js/utils/jquery-3.6.0.min.js"></script>
+    
     <script src="crud_noticias.js"></script>
+
+    <script>
+        //  Porque ainda não existem notícias
+
+
+        //  definição de constantes
+        const TOAST_ERROR = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        });
+
+        const URLS = {
+            home: '../../',
+            commonUser: {
+                index: '../common-user/', 
+                pesquisaNoticia: '../common-user/pesquisa-noticia.html'
+            },
+            admUser: {
+                index: '../adm-user/',
+            }
+        };
+
+        // função para logOut
+        function logout(e) {
+            localStorage.removeItem("usuario_logado");
+            window.location = URLS.home;
+        }
+
+        // função para mostrar o menu
+        const showMenu = () => {
+            const nav = $('#navBar'),
+                bodyPd = $('#bodyPd'),
+                headerPd = $('#header');
+        
+            if (nav && bodyPd && headerPd) {
+                nav.toggleClass('show-menu');
+
+                $('#headerToggle').toggleClass('bx-x');
+
+                bodyPd.toggleClass('body-pd');
+
+                headerPd.toggleClass('body-pd');
+            } 
+        }
+
+        
+        const toggle = $('#headerToggle'),
+                link = $('.nav-link'),
+                btnLogout = $('#btnHeaderUser'),
+                userLogado = JSON.parse(localStorage.getItem("usuario_logado"));
+
+        $('#headerUser').text(userLogado.nome);
+
+        toggle.click(showMenu);
+
+        btnLogout.click(function(e) {
+            e.preventDefault();
+
+            logout();
+        });
+
+        if (link) {
+            link.click(function() {
+                link.each(function(i) {
+                    $(this).removeClass('active');
+                });
+
+                $(this).addClass('active');
+            });
+        }
+        
+    </script>
 </body>
 
 </html>
